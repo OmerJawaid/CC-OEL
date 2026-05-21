@@ -73,9 +73,9 @@ export default function NoticeCard({ notice, currentUserId, compact }) {
   }
 
   return (
-    <div className="bg-white border border-slate-200 rounded-2xl overflow-hidden hover:shadow-md hover:border-slate-300 transition-all group flex flex-col">
+    <div className="bg-white border border-slate-200 rounded-2xl overflow-hidden hover:shadow-lg hover:shadow-slate-100 hover:border-slate-300 transition-all group flex flex-col">
       {/* Accent strip */}
-      <div className={`h-1 ${cfg.strip}`} />
+      <div className={`h-1.5 ${cfg.strip}`} />
 
       <div className="p-5 flex flex-col flex-1">
         {/* Header row */}

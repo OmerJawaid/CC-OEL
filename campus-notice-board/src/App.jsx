@@ -38,12 +38,12 @@ export default function App() {
       <header className="bg-white border-b border-slate-200 sticky top-0 z-50 shadow-sm">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-between">
           <div className="flex items-center gap-2.5">
-            <div className="w-8 h-8 rounded-xl bg-blue-600 flex items-center justify-center shadow-sm">
+            <div className="w-8 h-8 rounded-xl bg-blue-600 flex items-center justify-center shadow-sm ring-2 ring-blue-100">
               <Bell size={15} className="text-white" />
             </div>
             <div className="leading-tight">
-              <span className="font-bold text-slate-900 text-sm">Campus Notice Board</span>
-              <span className="hidden sm:block text-[10px] text-slate-400 font-medium -mt-0.5">Bahria University</span>
+              <span className="font-bold text-slate-900 text-base">Campus Notice Board</span>
+              <span className="hidden sm:block text-[10px] text-slate-400 font-medium">Bahria University</span>
             </div>
           </div>
 

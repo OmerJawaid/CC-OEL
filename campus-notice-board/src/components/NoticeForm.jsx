@@ -3,10 +3,10 @@ import { supabase } from '../supabaseClient';
 import { Send } from 'lucide-react';
 
 const CATEGORIES = [
-  { value: 'Academic', emoji: '📚', color: 'border-amber-300 text-amber-700 bg-amber-50 data-[active=true]:bg-amber-500 data-[active=true]:text-white data-[active=true]:border-amber-500' },
-  { value: 'Urgent',   emoji: '🔴', color: 'border-rose-300 text-rose-700 bg-rose-50 data-[active=true]:bg-rose-500 data-[active=true]:text-white data-[active=true]:border-rose-500' },
-  { value: 'Event',    emoji: '🎉', color: 'border-emerald-300 text-emerald-700 bg-emerald-50 data-[active=true]:bg-emerald-500 data-[active=true]:text-white data-[active=true]:border-emerald-500' },
-  { value: 'General',  emoji: '📌', color: 'border-slate-300 text-slate-600 bg-slate-50 data-[active=true]:bg-slate-600 data-[active=true]:text-white data-[active=true]:border-slate-600' },
+  { value: 'Academic', emoji: '📚', idle: 'border-amber-200 text-amber-700 bg-amber-50',   on: 'border-amber-500 bg-amber-500 text-white' },
+  { value: 'Urgent',   emoji: '🔴', idle: 'border-rose-200 text-rose-700 bg-rose-50',      on: 'border-rose-500 bg-rose-500 text-white'   },
+  { value: 'Event',    emoji: '🎉', idle: 'border-emerald-200 text-emerald-700 bg-emerald-50', on: 'border-emerald-500 bg-emerald-500 text-white' },
+  { value: 'General',  emoji: '📌', idle: 'border-slate-200 text-slate-600 bg-slate-50',   on: 'border-slate-600 bg-slate-600 text-white' },
 ];
 
 const MAX_BODY = 500;
@@ -43,13 +43,12 @@ export default function NoticeForm({ session }) {
       <div>
         <label className="block text-xs font-semibold text-slate-500 mb-2">Category</label>
         <div className="flex flex-wrap gap-2">
-          {CATEGORIES.map(({ value, emoji, color }) => (
+          {CATEGORIES.map(({ value, emoji, idle, on }) => (
             <button
               key={value}
               type="button"
-              data-active={category === value}
               onClick={() => setCategory(value)}
-              className={`px-3 py-1.5 text-xs font-semibold rounded-full border transition-all ${color}`}
+              className={`px-3 py-1.5 text-xs font-semibold rounded-full border transition-all ${category === value ? on : idle}`}
             >
               {emoji} {value}
             </button>
